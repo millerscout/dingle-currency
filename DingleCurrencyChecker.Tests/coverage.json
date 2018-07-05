@@ -1,0 +1,32 @@
+{
+ "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyChecker.Tests\\bin\\Debug\\netcoreapp2.0\\DingleCurrencyChecker.Core.dll": {
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyService.cs": {
+   "DingleCurrencyChecker.Core.CurrencyService": {
+    "System.Int32 DingleCurrencyChecker.Core.CurrencyService::get_Batat()": {
+     "Lines": {
+      "9": {
+       "Hits": 2
+      }
+     },
+     "Branches": {
+     }
+    },
+    "System.Void DingleCurrencyChecker.Core.CurrencyService::PutValue(System.Int32)": {
+     "Lines": {
+      "12": {
+       "Hits": 1
+      },
+      "13": {
+       "Hits": 1
+      },
+      "14": {
+       "Hits": 1
+      }
+     },
+     "Branches": {
+     }
+    }
+   }
+  }
+ }
+}
