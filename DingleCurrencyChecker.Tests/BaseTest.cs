@@ -18,9 +18,11 @@ namespace DingleCurrencyChecker.Tests
         {
             var currency = new Mock<ICurrencySource>();
 
-            currency.Setup(q => q.GetCurrencies())
-                .ReturnsAsync(new Dictionary<string, decimal> {
-                    { "BRL", 3.86371m }, { "USD", 1 }, { "EUR", 0.85042m }
+            currency.Setup(q => q.GetCurrencies(It.IsAny<string>()))
+                .Returns(new Dictionary<string, decimal> {
+                    { "BRL", 3.86371m },
+                    { "USD", 1 },
+                    { "EUR", 0.85042m }
                 });
 
             CurrencyService = new CurrencyConverterService(currency.Object);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using DingleCurrencyChecker.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -24,6 +25,10 @@ namespace DingleCurrencyChecker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            var settings = Configuration.GetSection(nameof(Config)).Get<Config>();
+
+            services.AddTransient<ICurrencySource, CurrencyLayerService>(c => new CurrencyLayerService(settings.CurrencyLayer));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

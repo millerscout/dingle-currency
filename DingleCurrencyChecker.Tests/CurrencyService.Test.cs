@@ -16,24 +16,59 @@ namespace DingleCurrencyChecker.Tests
     {
 
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task ConvertendoMoedaBRLToUSD()
         {
-       
-
-
-            var BRLToUSD = await CurrencyService.ConvertPriceGivenCurrenCurrencyToExpectedCurrency(12.50m, "BRL", "USD");
+            var BRLToUSD = CurrencyService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(12.50m, "BRL", "USD");
 
             Assert.IsTrue(BRLToUSD > 0, "O Valor Não pode ser zero ");
             Assert.IsTrue(Math.Ceiling(BRLToUSD) == Math.Ceiling(3.23m));
 
-
-            var BRLToEUR = await CurrencyService.ConvertPriceGivenCurrenCurrencyToExpectedCurrency(12.50m, "BRL", "EUR");
+            var BRLToEUR = CurrencyService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(12.50m, "BRL", "EUR");
 
             Assert.IsTrue(BRLToEUR > 0, "O Valor Não pode ser zero ");
             Assert.IsTrue(Math.Ceiling(BRLToEUR) == Math.Ceiling(2.75131m));
-            
-
         }
-       
+
+        [TestMethod]
+        public async Task ConvertendoMoedaBRLToEUR()
+        {
+            var BRLToEUR = CurrencyService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(12.50m, "BRL", "EUR");
+
+            Assert.IsTrue(BRLToEUR > 0, "O Valor Não pode ser zero ");
+            Assert.IsTrue(Math.Ceiling(BRLToEUR) == Math.Ceiling(2.75131m));
+        }
+
+        [TestMethod]
+        public async Task ConvertendoMoedaComValorNulo()
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+             CurrencyService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(0m, "BRL", "USD"), "O Valor Não pode ser Zero");
+        }
+
+        [TestMethod]
+        public async Task ConvertendoMoedaComValorNegativo()
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+                  CurrencyService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(-500m, "BRL", "USD"), "O Valor Não pode ser Zero");
+        }
+
+        [TestMethod]
+        public async Task ConvertendoMoedaComAlgumaCurrencyInexistente()
+        {
+            Assert.ThrowsException<ArgumentException>(() =>
+                  CurrencyService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(-500m, "", "USD"), "O Valor Não pode ser Zero");
+        }
+
+        [TestMethod]
+        public async Task VerificaEndPoint()
+        {
+
+
+            var t = new Mock<CurrencyLayerService>("");
+
+            t.Object.GetAvailableCurrencies();
+
+            t.Object.GetCurrencies("BRL");
+        }
     }
 }

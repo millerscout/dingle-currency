@@ -5,7 +5,8 @@ namespace DingleCurrencyChecker.Core
 {
     public interface ICurrencySource
     {
-        Task<Dictionary<string, string>> GetAvailableCurrencies();
-        Task<Dictionary<string, decimal>> GetCurrencies();
+        Dictionary<string, string> GetAvailableCurrencies();
+
+        Dictionary<string, decimal> GetCurrencies(string currencyCodes);
     }
 }

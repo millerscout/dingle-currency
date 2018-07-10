@@ -1,30 +1,259 @@
 {
  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyChecker.Tests\\bin\\Debug\\netcoreapp2.0\\DingleCurrencyChecker.Core.dll": {
-  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyService.cs": {
-   "DingleCurrencyChecker.Core.CurrencyService": {
-    "System.Int32 DingleCurrencyChecker.Core.CurrencyService::get_Batat()": {
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyConverterService.cs": {
+   "DingleCurrencyChecker.Core.CurrencyConverterService": {
+    "System.Decimal DingleCurrencyChecker.Core.CurrencyConverterService::ConvertAmountGivenCurrenCurrencyToExpectedCurrency(System.Decimal,System.String,System.String)": {
      "Lines": {
-      "9": {
-       "Hits": 2
-      }
+      "19": 6,
+      "20": 6,
+      "22": 6,
+      "23": 1,
+      "24": 1,
+      "26": 5,
+      "27": 2,
+      "28": 2,
+      "32": 3,
+      "34": 3,
+      "35": 3
      },
-     "Branches": {
-     }
+     "Branches": [{
+      "Line": 22,
+      "Offset": 32,
+      "EndOffset": 34,
+      "Path": 0,
+      "Ordinal": 0,
+      "Hits": 6
+     }, {
+      "Line": 22,
+      "Offset": 32,
+      "EndOffset": 46,
+      "Path": 1,
+      "Ordinal": 1,
+      "Hits": 0
+     }, {
+      "Line": 22,
+      "Offset": 49,
+      "EndOffset": 51,
+      "Path": 0,
+      "Ordinal": 2,
+      "Hits": 1
+     }, {
+      "Line": 22,
+      "Offset": 49,
+      "EndOffset": 63,
+      "Path": 1,
+      "Ordinal": 3,
+      "Hits": 5
+     }, {
+      "Line": 26,
+      "Offset": 76,
+      "EndOffset": 78,
+      "Path": 0,
+      "Ordinal": 4,
+      "Hits": 2
+     }, {
+      "Line": 26,
+      "Offset": 76,
+      "EndOffset": 90,
+      "Path": 1,
+      "Ordinal": 5,
+      "Hits": 3
+     }]
+    }
+   }
+  },
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyLayer\\CurrencyLayerService.cs": {
+   "DingleCurrencyChecker.Core.CurrencyLayerService": {
+    "RestSharp.IRestClient DingleCurrencyChecker.Core.CurrencyLayerService::get_RestClient()": {
+     "Lines": {
+      "13": 0
+     },
+     "Branches": []
     },
-    "System.Void DingleCurrencyChecker.Core.CurrencyService::PutValue(System.Int32)": {
+    "System.Collections.Generic.Dictionary`2<System.String,System.String> DingleCurrencyChecker.Core.CurrencyLayerService::GetAvailableCurrencies()": {
      "Lines": {
-      "12": {
-       "Hits": 1
-      },
-      "13": {
-       "Hits": 1
-      },
-      "14": {
-       "Hits": 1
-      }
+      "16": 1,
+      "18": 1,
+      "20": 1,
+      "23": 1,
+      "25": 1,
+      "27": 1,
+      "29": 1
      },
-     "Branches": {
-     }
+     "Branches": []
+    },
+    "System.Collections.Generic.Dictionary`2<System.String,System.Decimal> DingleCurrencyChecker.Core.CurrencyLayerService::GetCurrencies(System.String)": {
+     "Lines": {
+      "32": 1,
+      "33": 1,
+      "35": 1,
+      "38": 1,
+      "40": 1,
+      "42": 1,
+      "43": 1
+     },
+     "Branches": []
+    }
+   }
+  },
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyLayer\\BaseCurrencyResponse.cs": {
+   "DingleCurrencyChecker.Core.CurrencyLayer.BaseCurrencyResponse": {
+    "System.Boolean DingleCurrencyChecker.Core.CurrencyLayer.BaseCurrencyResponse::get_Success()": {
+     "Lines": {
+      "11": 2
+     },
+     "Branches": []
+    },
+    "System.String DingleCurrencyChecker.Core.CurrencyLayer.BaseCurrencyResponse::get_Terms()": {
+     "Lines": {
+      "14": 2
+     },
+     "Branches": []
+    },
+    "System.String DingleCurrencyChecker.Core.CurrencyLayer.BaseCurrencyResponse::get_Privacy()": {
+     "Lines": {
+      "17": 2
+     },
+     "Branches": []
+    }
+   }
+  },
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyLayer\\CurrencyLayerCurrenciesResponse.cs": {
+   "DingleCurrencyChecker.Core.CurrencyLayer.CurrencyLayerCurrenciesResponse": {
+    "System.Int64 DingleCurrencyChecker.Core.CurrencyLayer.CurrencyLayerCurrenciesResponse::get_Timestamp()": {
+     "Lines": {
+      "12": 1
+     },
+     "Branches": []
+    },
+    "System.String DingleCurrencyChecker.Core.CurrencyLayer.CurrencyLayerCurrenciesResponse::get_Source()": {
+     "Lines": {
+      "15": 1
+     },
+     "Branches": []
+    },
+    "System.Collections.Generic.Dictionary`2<System.String,System.Decimal> DingleCurrencyChecker.Core.CurrencyLayer.CurrencyLayerCurrenciesResponse::get_Quotes()": {
+     "Lines": {
+      "18": 2
+     },
+     "Branches": []
+    }
+   }
+  },
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyCheckerCore\\CurrencyLayer\\CurrencyLayerListResponse.cs": {
+   "DingleCurrencyChecker.Core.CurrencyLayer.CurrencyLayerListResponse": {
+    "System.Collections.Generic.Dictionary`2<System.String,System.String> DingleCurrencyChecker.Core.CurrencyLayer.CurrencyLayerListResponse::get_Currencies()": {
+     "Lines": {
+      "11": 2
+     },
+     "Branches": []
+    }
+   }
+  }
+ },
+ "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyChecker.Tests\\bin\\Debug\\netcoreapp2.0\\DingleCurrencyChecker.dll": {
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyChecker\\Program.cs": {
+   "DingleCurrencyChecker.Program": {
+    "System.Void DingleCurrencyChecker.Program::Main(System.String[])": {
+     "Lines": {
+      "16": 0,
+      "17": 0,
+      "18": 0
+     },
+     "Branches": []
+    },
+    "Microsoft.AspNetCore.Hosting.IWebHost DingleCurrencyChecker.Program::BuildWebHost(System.String[])": {
+     "Lines": {
+      "21": 0,
+      "22": 0,
+      "23": 0
+     },
+     "Branches": []
+    }
+   }
+  },
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyChecker\\Startup.cs": {
+   "DingleCurrencyChecker.Startup": {
+    "Microsoft.Extensions.Configuration.IConfiguration DingleCurrencyChecker.Startup::get_Configuration()": {
+     "Lines": {
+      "21": 0
+     },
+     "Branches": []
+    },
+    "System.Void DingleCurrencyChecker.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)": {
+     "Lines": {
+      "25": 0,
+      "26": 0,
+      "27": 0
+     },
+     "Branches": []
+    },
+    "System.Void DingleCurrencyChecker.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)": {
+     "Lines": {
+      "31": 0,
+      "32": 0,
+      "33": 0,
+      "34": 0,
+      "35": 0,
+      "37": 0,
+      "38": 0
+     },
+     "Branches": [{
+      "Line": 32,
+      "Offset": 9,
+      "EndOffset": 11,
+      "Path": 0,
+      "Ordinal": 0,
+      "Hits": 0
+     }, {
+      "Line": 32,
+      "Offset": 9,
+      "EndOffset": 20,
+      "Path": 1,
+      "Ordinal": 1,
+      "Hits": 0
+     }]
+    }
+   }
+  },
+  "C:\\Projects\\DingleCurrencyChecker\\DingleCurrencyChecker\\Controllers\\ValuesController.cs": {
+   "DingleCurrencyChecker.Controllers.ValuesController": {
+    "System.Collections.Generic.IEnumerable`1<System.String> DingleCurrencyChecker.Controllers.ValuesController::Get()": {
+     "Lines": {
+      "15": 0,
+      "16": 0,
+      "17": 0
+     },
+     "Branches": []
+    },
+    "System.String DingleCurrencyChecker.Controllers.ValuesController::Get(System.Int32)": {
+     "Lines": {
+      "22": 0,
+      "23": 0,
+      "24": 0
+     },
+     "Branches": []
+    },
+    "System.Void DingleCurrencyChecker.Controllers.ValuesController::Post(System.String)": {
+     "Lines": {
+      "29": 0,
+      "30": 0
+     },
+     "Branches": []
+    },
+    "System.Void DingleCurrencyChecker.Controllers.ValuesController::Put(System.Int32,System.String)": {
+     "Lines": {
+      "35": 0,
+      "36": 0
+     },
+     "Branches": []
+    },
+    "System.Void DingleCurrencyChecker.Controllers.ValuesController::Delete(System.Int32)": {
+     "Lines": {
+      "41": 0,
+      "42": 0
+     },
+     "Branches": []
     }
    }
   }

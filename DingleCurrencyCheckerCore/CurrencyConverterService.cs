@@ -15,16 +15,21 @@ namespace DingleCurrencyChecker.Core
             _currencySource = currencySource;
         }
 
-        public async Task<decimal> ConvertPriceGivenCurrenCurrencyToExpectedCurrency(decimal actualPrice, string currentCurrencyCode, string expectedCurrencyCode)
+        public decimal ConvertAmountGivenCurrenCurrencyToExpectedCurrency(decimal amount, string currentCurrencyCode, string expectedCurrencyCode)
         {
-            var currencies = await _currencySource.GetCurrencies();
+            var currencies = _currencySource.GetCurrencies($"{currentCurrencyCode}, {expectedCurrencyCode}");
 
             if (!currencies.ContainsKey(expectedCurrencyCode) || !currencies.ContainsKey(currentCurrencyCode))
             {
                 throw new ArgumentException("NotFound");
             }
+            if (amount <= 0)
+            {
+                throw new ArgumentException("amount must be greater than zero");
 
-            var usdPrice = actualPrice / currencies[currentCurrencyCode];
+            }
+
+            var usdPrice = amount / currencies[currentCurrencyCode];
 
             return usdPrice * currencies[expectedCurrencyCode];
         }
