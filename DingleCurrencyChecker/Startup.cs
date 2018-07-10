@@ -28,7 +28,8 @@ namespace DingleCurrencyChecker
 
             var settings = Configuration.GetSection(nameof(Config)).Get<Config>();
 
-            services.AddTransient<ICurrencySource, CurrencyLayerService>(c => new CurrencyLayerService(settings.CurrencyLayer));
+            services.AddTransient<CurrencyConverterService>();
+            services.AddTransient<ICurrencySource, CurrencyLayerService>(c => new CurrencyLayerService(settings.CurrencyLayerKey));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -38,6 +39,11 @@ namespace DingleCurrencyChecker
             {
                 app.UseDeveloperExceptionPage();
             }
+            DefaultFilesOptions options = new DefaultFilesOptions();
+            options.DefaultFileNames.Clear();
+            options.DefaultFileNames.Add("index.html");
+            app.UseDefaultFiles(options);
+            app.UseStaticFiles();
 
             app.UseMvc();
         }

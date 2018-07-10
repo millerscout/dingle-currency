@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DingleCurrencyChecker.Core.CurrencyLayer;
@@ -44,7 +45,12 @@ namespace DingleCurrencyChecker.Core
 
             var response2 = client.Execute<CurrencyLayerCurrenciesResponse>(request);
 
-            return response2.Data.Quotes;
+            return RemoveSourceFromCurrencyKey(response2);
+        }
+
+        private static Dictionary<string, decimal> RemoveSourceFromCurrencyKey(IRestResponse<CurrencyLayerCurrenciesResponse> response2)
+        {
+            return response2.Data.Quotes.ToDictionary(q => q.Key.Substring(3, 3), q => q.Value);
         }
     }
 }

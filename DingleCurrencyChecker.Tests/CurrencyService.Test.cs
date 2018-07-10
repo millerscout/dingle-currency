@@ -63,8 +63,8 @@ namespace DingleCurrencyChecker.Tests
         public async Task VerificaEndPoint()
         {
 
-
-            var t = new Mock<CurrencyLayerService>("");
+            //TODO: Validate status returns
+            var t = new Mock<CurrencyLayerService>("aad525d185d203a74429647e1ef094f9");
 
             t.Object.GetAvailableCurrencies();
 

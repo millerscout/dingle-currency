@@ -11,7 +11,6 @@ namespace DingleCurrencyChecker.Core
 
         public CurrencyConverterService(ICurrencySource currencySource)
         {
-
             _currencySource = currencySource;
         }
 

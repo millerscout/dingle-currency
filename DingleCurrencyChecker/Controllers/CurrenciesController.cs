@@ -13,13 +13,22 @@ namespace DingleCurrencyChecker.Controllers
     public class CurrenciesController : Controller
     {
         private ICurrencySource _currencyService;
+        private CurrencyConverterService _currencyConverterService;
 
-        public CurrenciesController(ICurrencySource currencyService)
+        public CurrenciesController(ICurrencySource currencyService, CurrencyConverterService currencyConverterService)
         {
             _currencyService = currencyService;
+            _currencyConverterService = currencyConverterService;
         }
 
         [HttpGet]
         public Dictionary<string, string> Get() => _currencyService.GetAvailableCurrencies();
+
+        [HttpGet]
+        [HttpGet("{from}/{to}/{amount}")]
+        public decimal Eita(string from, string to, decimal amount)
+        {
+            return _currencyConverterService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(amount, from, to);
+        }
     }
 }
