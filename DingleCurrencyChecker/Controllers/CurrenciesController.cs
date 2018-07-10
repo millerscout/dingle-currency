@@ -22,11 +22,12 @@ namespace DingleCurrencyChecker.Controllers
         }
 
         [HttpGet]
+        [HttpGet("list")]
         public Dictionary<string, string> Get() => _currencyService.GetAvailableCurrencies();
 
         [HttpGet]
         [HttpGet("{from}/{to}/{amount}")]
-        public decimal Eita(string from, string to, decimal amount)
+        public decimal Convert(string from, string to, decimal amount)
         {
             return _currencyConverterService.ConvertAmountGivenCurrenCurrencyToExpectedCurrency(amount, from, to);
         }

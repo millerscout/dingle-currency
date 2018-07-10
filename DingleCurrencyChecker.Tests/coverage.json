@@ -230,34 +230,82 @@
      "Lines": {
       "26": 0,
       "27": 0,
+      "28": 0,
       "29": 0,
+      "30": 0,
       "31": 0,
       "32": 0,
-      "33": 0
+      "33": 0,
+      "34": 0,
+      "35": 0,
+      "37": 0,
+      "38": 0,
+      "39": 0
      },
-     "Branches": []
+     "Branches": [{
+      "Line": 28,
+      "Offset": 21,
+      "EndOffset": 23,
+      "Path": 0,
+      "Ordinal": 0,
+      "Hits": 0
+     }, {
+      "Line": 28,
+      "Offset": 21,
+      "EndOffset": 46,
+      "Path": 1,
+      "Ordinal": 1,
+      "Hits": 0
+     }]
     },
     "System.Void DingleCurrencyChecker.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)": {
      "Lines": {
-      "37": 0,
-      "38": 0,
-      "39": 0,
-      "40": 0,
-      "41": 0,
       "43": 0,
-      "44": 0
+      "44": 0,
+      "45": 0,
+      "46": 0,
+      "47": 0,
+      "48": 0,
+      "49": 0,
+      "50": 0,
+      "51": 0,
+      "52": 0,
+      "53": 0,
+      "57": 0,
+      "58": 0
      },
      "Branches": [{
-      "Line": 38,
+      "Line": 44,
       "Offset": 9,
       "EndOffset": 11,
       "Path": 0,
       "Ordinal": 0,
       "Hits": 0
      }, {
-      "Line": 38,
+      "Line": 44,
       "Offset": 9,
-      "EndOffset": 20,
+      "EndOffset": 32,
+      "Path": 1,
+      "Ordinal": 1,
+      "Hits": 0
+     }]
+    }
+   },
+   "DingleCurrencyChecker.Startup/<>c": {
+    "System.Void DingleCurrencyChecker.Startup/<>c::<ConfigureServices>b__4_0(Microsoft.AspNetCore.Cors.Infrastructure.CorsOptions)": {
+     "Lines": {
+     },
+     "Branches": [{
+      "Line": 29,
+      "Offset": 13,
+      "EndOffset": 15,
+      "Path": 0,
+      "Ordinal": 0,
+      "Hits": 0
+     }, {
+      "Line": 29,
+      "Offset": 13,
+      "EndOffset": 38,
       "Path": 1,
       "Ordinal": 1,
       "Hits": 0
@@ -269,15 +317,15 @@
    "DingleCurrencyChecker.Controllers.CurrenciesController": {
     "System.Collections.Generic.Dictionary`2<System.String,System.String> DingleCurrencyChecker.Controllers.CurrenciesController::Get()": {
      "Lines": {
-      "25": 0
+      "26": 0
      },
      "Branches": []
     },
-    "System.Decimal DingleCurrencyChecker.Controllers.CurrenciesController::Eita(System.String,System.String,System.Decimal)": {
+    "System.Decimal DingleCurrencyChecker.Controllers.CurrenciesController::Convert(System.String,System.String,System.Decimal)": {
      "Lines": {
-      "30": 0,
       "31": 0,
-      "32": 0
+      "32": 0,
+      "33": 0
      },
      "Branches": []
     }

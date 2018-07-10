@@ -25,7 +25,13 @@ namespace DingleCurrencyChecker
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-
+            services.AddCors(option=> {
+                option.AddPolicy("AllowAllOrigins",
+                       builder =>
+                       {
+                           builder.AllowAnyOrigin();
+                       });
+            });
             var settings = Configuration.GetSection(nameof(Config)).Get<Config>();
 
             services.AddTransient<CurrencyConverterService>();
@@ -38,12 +44,15 @@ namespace DingleCurrencyChecker
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors("AllowAllOrigins");
             }
             DefaultFilesOptions options = new DefaultFilesOptions();
             options.DefaultFileNames.Clear();
             options.DefaultFileNames.Add("index.html");
             app.UseDefaultFiles(options);
             app.UseStaticFiles();
+
+            
 
             app.UseMvc();
         }
